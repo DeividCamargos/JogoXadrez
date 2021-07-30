@@ -13,7 +13,7 @@ namespace ProetoXadrez
                     if (tab.peca(i, c) == null)
                         System.Console.Write("- ");
                     else
-                        System.Console.Write($"{tab.peca(i, c)} -");
+                        System.Console.Write($"{tab.peca(i, c)} ");
                 }
                 System.Console.WriteLine();
             }
