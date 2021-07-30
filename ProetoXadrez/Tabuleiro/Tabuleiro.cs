@@ -22,9 +22,30 @@ namespace tabuleiro
         }
         public void AdicionarPeca(Peca novaPeca, Posicao pos)
         {
+            if (ExistePeca(pos))
+                throw new TabuleiroError("Ja existe uma peça na posição selecionada!");
+
             pecas[pos.Linha, pos.Coluna] = novaPeca;
             
             novaPeca.Posicao = pos;
+        }
+        public bool PosicaoExiste(Posicao pos)
+        {
+            if (pos.Linha < 0 || pos.Linha > linhas || pos.Coluna < 0 || pos.Coluna > colunas)
+                return false;
+            return true;
+        }
+        public void ValidarPosicaoExiste(Posicao pos)
+        {
+            if (!PosicaoExiste(pos))
+                throw new TabuleiroError("Posicao não existe no tabuleiro!");
+        }
+        public bool ExistePeca (Posicao pos)
+        {
+            ValidarPosicaoExiste(pos);
+            if (pecas[pos.Linha, pos.Coluna] == null)
+                return false;
+            return true;
         }
     }
 }
