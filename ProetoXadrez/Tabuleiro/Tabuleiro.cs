@@ -20,13 +20,16 @@ namespace tabuleiro
         {
             return pecas[linha, coluna];
         }
+        public Peca peca(Posicao posicao)
+        {
+            return pecas[posicao.Linha, posicao.Coluna];
+        }
         public void AdicionarPeca(Peca novaPeca, Posicao pos)
         {
             if (ExistePeca(pos))
                 throw new TabuleiroError("Ja existe uma peça na posição selecionada!");
 
             pecas[pos.Linha, pos.Coluna] = novaPeca;
-            
             novaPeca.Posicao = pos;
         }
         public bool PosicaoExiste(Posicao pos)
@@ -43,9 +46,8 @@ namespace tabuleiro
         public bool ExistePeca (Posicao pos)
         {
             ValidarPosicaoExiste(pos);
-            if (pecas[pos.Linha, pos.Coluna] == null)
-                return false;
-            return true;
+
+            return pecas[pos.Linha, pos.Coluna] == null;
         }
     }
 }
