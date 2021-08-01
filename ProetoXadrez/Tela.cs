@@ -1,5 +1,6 @@
 ﻿using tabuleiro;
 using System;
+using xadrez;
 namespace ProetoXadrez
 {
     class Tela
@@ -35,5 +36,13 @@ namespace ProetoXadrez
 
             }
         }
+        public static PosicaoXadrez lerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1].ToString());
+            return new PosicaoXadrez(coluna, linha);
+        }
+
     }
 }

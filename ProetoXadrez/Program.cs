@@ -9,15 +9,22 @@ namespace ProetoXadrez
         {
             try
             {
-                Tabuleiro Tabuleiro = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab);
 
-                Tabuleiro.AdicionarPeca(new Torre(Tabuleiro, Cor.Preta), new Posicao(0,7));
-                Tabuleiro.AdicionarPeca(new Torre(Tabuleiro, Cor.Preta), new Posicao(1, 6));
-                Tabuleiro.AdicionarPeca(new Rei(Tabuleiro, Cor.Branca), new Posicao(2, 4));
-                Tabuleiro.AdicionarPeca(new Rei(Tabuleiro, Cor.Branca), new Posicao(3, 5));
-                Tabuleiro.AdicionarPeca(new Rei(Tabuleiro, Cor.Preta), new Posicao(6, 2));
+                    Console.WriteLine("\nPosicao de origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().ToPosicao();
 
-                Tela.ImprimirTabuleiro(Tabuleiro);
+                    Console.WriteLine("Posicao de destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().ToPosicao();
+
+                    partida.ExecutarMovimento(origem, destino);
+
+                    Tela.ImprimirTabuleiro(partida.tab);
+                }
             }
             catch (TabuleiroError e)
             {
