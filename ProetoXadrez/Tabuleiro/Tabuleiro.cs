@@ -26,7 +26,7 @@ namespace tabuleiro
         }
         public void AdicionarPeca(Peca novaPeca, Posicao pos)
         {
-            if (ExistePeca(pos))
+            if (!ExistePeca(pos))
                 throw new TabuleiroError("Ja existe uma peça na posição selecionada!");
 
             pecas[pos.Linha, pos.Coluna] = novaPeca;
