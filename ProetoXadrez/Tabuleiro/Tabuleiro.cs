@@ -36,14 +36,14 @@ namespace tabuleiro
         {
             if (peca(pos) == null)
                 return null;
-            Peca p = peca(pos);
+            Peca aux = peca(pos);
             pecas[pos.Linha, pos.Coluna] = null;
-            p.Posicao = null;
-            return p;
+            aux.Posicao = null;
+            return aux;
         }
         public bool PosicaoExiste(Posicao pos)
         {
-            if (pos.Linha < 0 || pos.Linha > linhas || pos.Coluna < 0 || pos.Coluna > colunas)
+            if (pos.Linha < 0 || pos.Linha >= linhas || pos.Coluna < 0 || pos.Coluna >= colunas)
                 return false;
             return true;
         }

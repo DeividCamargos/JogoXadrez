@@ -15,21 +15,23 @@ namespace ProetoXadrez
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.tab);
 
-                    Console.WriteLine("\nPosicao de origem: ");
+                    Console.Write("\nPosicao de origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().ToPosicao();
 
-                    Console.WriteLine("Posicao de destino: ");
+                    Console.Clear();
+                    bool[,] aux = partida.tab.peca(origem).movimentosPossiveis();
+                    Tela.ImprimirTabuleiro(partida.tab, aux);
+                    
+                    Console.Write("\nPosicao de destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().ToPosicao();
 
                     partida.ExecutarMovimento(origem, destino);
-
-                    Tela.ImprimirTabuleiro(partida.tab);
                 }
             }
             catch (TabuleiroError e)
             {
                 Console.WriteLine($"TabuleiroError! {e.Message}");
             }
-        }   
+        }
     }
 }

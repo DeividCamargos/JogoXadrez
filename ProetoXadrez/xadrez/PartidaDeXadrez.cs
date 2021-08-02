@@ -29,7 +29,7 @@ namespace xadrez
         {
             tab.AdicionarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('c', 8).ToPosicao());
             tab.AdicionarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('h', 8).ToPosicao());
-            tab.AdicionarPeca(new Rei(tab, Cor.Branca), new PosicaoXadrez('a', 8).ToPosicao());
+            tab.AdicionarPeca(new Rei(tab, Cor.Preta), new PosicaoXadrez('a', 8).ToPosicao());
             tab.AdicionarPeca(new Rei(tab, Cor.Branca), new PosicaoXadrez('b', 3).ToPosicao());
             tab.AdicionarPeca(new Rei(tab, Cor.Preta), new PosicaoXadrez('e', 5).ToPosicao());
         }
