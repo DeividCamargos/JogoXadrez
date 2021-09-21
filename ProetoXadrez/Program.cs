@@ -1,7 +1,7 @@
 ﻿using System;
 using tabuleiro;
 using xadrez;
-namespace ProetoXadrez
+namespace ProjetoXadrez
 {
     class Program
     {

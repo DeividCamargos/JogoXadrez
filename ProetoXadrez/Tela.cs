@@ -1,7 +1,7 @@
 ﻿using tabuleiro;
 using System;
 using xadrez;
-namespace ProetoXadrez
+namespace ProjetoXadrez
 {
     class Tela
     {
@@ -54,6 +54,5 @@ namespace ProetoXadrez
             int linha = int.Parse(s[1].ToString());
             return new PosicaoXadrez(coluna, linha);
         }
-
     }
 }
